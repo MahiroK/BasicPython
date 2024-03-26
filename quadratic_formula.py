@@ -1,60 +1,31 @@
-a = 1
-b = -6
-c = 9
+a1 = 1
+b1 = -6
+c1 = 9
 
 # 1問目(1)
-
-import math
-
-# 2次方程式の解を計算する関数
-def solve_quadratic(a, b, c):
-    discriminant = b**2 - 4*a*c
-    if discriminant >= 0:
-        root1 = (-b + math.sqrt(discriminant)) / (2*a)
-        root2 = (-b - math.sqrt(discriminant)) / (2*a)
-        return root1, root2
-    else:
-        real_part = -b / (2*a)
-        imaginary_part = math.sqrt(-discriminant) / (2*a)
-        return (real_part, imaginary_part), (real_part, -imaginary_part)
-
-# 係数を入力
-a = float(input("1: "))
-b = float(input("-6: "))
-c = float(input("9: "))
-
-# 解を計算
-roots = solve_quadratic(a, b, c)
-
-# 結果を表示
-print("解は: ", roots)
-
+x1 = (-b1+(b1**2-4*a1*c1)**1/2)/(2*a1)
+x2 = (-b1-(b1**2-4*a1*c1)**1/2)/(2*a1)
+print(x1,x2)
 
 # (2)
-a = 1
-b = -6
-c = 9
+a2 = 1
+b2 = 2
+c2 = -8
+x3 = (-b2+(b2**2-4*a2*c2)**1/2)/(2*a2)
+x4 = (-b2-(b2**2-4*a2*c2)**1/2)/(2*a2)
+print(x3,x4)
 
-import math
-# 2次方程式の解を計算する関数
-def solve_quadratic(a, b, c):
-    discriminant = b**2 - 4*a*c
-    if discriminant >= 0:
-        root1 = (-b + math.sqrt(discriminant)) / (2*a)
-        root2 = (-b - math.sqrt(discriminant)) / (2*a)
-        return root1, root2
-    else:
-        real_part = -b / (2*a)
-        imaginary_part = math.sqrt(-discriminant) / (2*a)
-        return (real_part, imaginary_part), (real_part, -imaginary_part)
+# (3)
+a3 = 8
+b3 = -6
+c3 = -35
+x5 = (-b3+(b3**2-4*a3*c3)**1/2)/(2*a3)
+x6 = (-b3-(b3**2-4*a3*c3)**1/2)/(2*a3)
+print(x5,x6)
 
-# 係数を入力
-a = float(input("1: "))
-b = float(input("-6: "))
-c = float(input("9: "))
-
-# 解を計算
-roots = solve_quadratic(a, b, c)
-
-# 結果を表示
-print("解は: ", roots)
+# (4)
+a4 = 1
+c4 = 1
+x7 = (-b4+(b4**-4*a4*c4)**1/2)/(2*a4)
+x4 = (-b4-(b4**-4*a4*c4)**1/2)/(2*a4)
+print(x7,x8)
