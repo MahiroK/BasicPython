@@ -6,6 +6,8 @@ txt = """
 py = list(map(len,txt.replace('.', '').replace(',', '').split()))
 print(py)
 answer = ""
+
+#空白を取り除く
 for i in py: 
     answer += str(i)
 
