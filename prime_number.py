@@ -2,16 +2,24 @@
 #(1) 61が素数であること
 #(2) 10が素数でないこと
 
-n = int(input("数値を入力してください: "))
 
 def is_prime(n):
+    if n <= 1:
+        return False
+    elif n <= 3:
+        return True
+    elif n % 2 == 0 or n % 3 == 0:
+        return False
+    i = 5
+    while i * i <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+    return True 
 
-    #　if文・for文を用いて正誤判定をしました
-    for i in range (2,n):
-     if n % i == 0:
-        return "素数ではありません"
-    return "素数と判定されました"
-    
-     
-result = is_prime(n)
-print(result)    
+n = int(input("数値を入力してください: "))
+if is_prime(n):
+    print("素数と判定されました.")
+else:
+    print("素数ではありません.")
+

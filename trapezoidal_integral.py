@@ -9,7 +9,8 @@ dx = (b-a)/n
 
 # 面積の総和
 s = 0
-for i in range(1,100):
+# 4/10 変更：　range内を（1,101）に変更しました
+for i in range(1,101):
     x1 = a + dx*i
     x2 = a + dx*(i+1)
     f1 = sin(x1)    # 上底
