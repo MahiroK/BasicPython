@@ -1,14 +1,22 @@
+a,b = input("a: "),input("b: ")
+a,b = int(a),int(b)
+
 def gcd (a,b):
-    r = a % b
-    while r != 0:
-     a,b = b,r
-     r = a % b 
-    return b
+    if b == 0:
+        return a
+    else:
+        return gcd (b,a%b)
 
-if  __name__ == '__main__':
-    a = int(input("aの値を入力:"))
-    b = int(input("bの値を入力:"))
+x = gcd(a,b)
+def gcd (a,b):
+    if b > a:
+        a,b = b,a 
+    while b:
+        a,b = b,a%b
+        return a
 
-    GCD = gcd(a,b)
 
-    print (f"({a},{b})→gcd: {GCD}")
+if (x) <= 1:
+    print(f"(a),(b)は互いに素である")
+else:
+    print("f(a),(b)は互いに素でない")
