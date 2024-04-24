@@ -12,14 +12,18 @@ def g(x):
 def h(x):
     return math.pi**(0.5)*math.exp(-x**2)
 
-def trapezoidal_integral(f,a,b,n):
+#引数のデフォルト値を設定しました。
+
+def trapezoidal_integral(f,a=0,b=1,n=100):
     s = 0
     h = (b-a)/n
+
+#　for文のところのインデントの数を修正しました。
     for i in range (1,n+1):
         s += h/2*(f(a+(i-1)*h)+f(a+i*h))
-        return s
+    return s
     
-probrem1 = trapezoidal_integral(f,0,2,100)
+probrem1 = trapezoidal_integral(f,0,pi/2,100)
 probrem2 = trapezoidal_integral(g,0,1,100)
 probrem3 = trapezoidal_integral(h,-100,100,1000)
 
