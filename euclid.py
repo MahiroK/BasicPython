@@ -15,13 +15,14 @@ x = gcd(a,b)
 print (x)
 
 #ここから(4)の互いに素の判定を関数化しました。
+#4/25 関数名を変更してみました。
+#4/25 bool型に変更しました。
 
-def f(x):
-    if (x) == 1:
-     return(f"(a),(b)は互いに素である")
+def judge(x):
+    if x == 1:
+     return True
     else:
-     return("f(a),(b)は互いに素でない")
+     return False
     
-print(f(x))
-
+print(judge(x))
 

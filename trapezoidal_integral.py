@@ -22,8 +22,9 @@ def trapezoidal_integral(f,a=0,b=1,n=100):
     for i in range (1,n+1):
         s += h/2*(f(a+(i-1)*h)+f(a+i*h))
     return s
-    
-probrem1 = trapezoidal_integral(f,0,pi/2,100)
+
+# 4/25 (1)の分割数を50にしました。
+probrem1 = trapezoidal_integral(f,0,pi/2,50)
 probrem2 = trapezoidal_integral(g,0,1,100)
 probrem3 = trapezoidal_integral(h,-100,100,1000)
 
