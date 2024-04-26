@@ -18,11 +18,15 @@ print (x)
 #4/25 関数名を変更してみました。
 #4/25 bool型に変更しました。
 
-def judge(x):
-    if x == 1:
+def judge(a,b):
+    x = gcd(a,b)
+    if  x == 1:
      return True
     else:
      return False
-    
-print(judge(x))
+
+a,b = input("a: "),input("b: ")
+a,b = int(a),int(b)
+
+print(judge(a,b))
 
