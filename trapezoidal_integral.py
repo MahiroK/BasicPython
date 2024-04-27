@@ -1,29 +1,33 @@
+import math
 from math import sin,pi
-# --example--
-a = int('0')
-b = pi/int('2')
-n = int('100')
+#(1)
+def f(x):
+    return sin(x)
 
-# 短冊の幅Δx
-h = (b-a)/n
+#(2)
+def g(x):
+    return 4/(1+x**2)
 
+#(3)
+def h(x):
+    return math.pi**(0.5)*math.exp(-x**2)
 
-# 面積の総和
-s = 0
-# 4/16 変更：　range内を（1,n+1）に変更しました
-# 問題文の式をもとに修正してみました。
+#引数のデフォルト値を設定しました。
 
-for i in range(1,n+1):
-    x1 = a+h*(i-1)
-    x2 = a+h*i
-    f1 = sin(x1)    # 上底
-    f2 = sin(x2)    # 下底
-    # 面積
-    s += h * (f1+f2)/2
+def trapezoidal_integral(f,a=0,b=1,n=100):
+    s = 0
+    h = (b-a)/n
 
-# 結果の表示(小数点以下10桁)
-print("{:.10f}".format(s))
+#　for文のところのインデントの数を修正しました。
+    for i in range (1,n+1):
+        s += h/2*(f(a+(i-1)*h)+f(a+i*h))
+    return s
 
-# print(sin(0))
-# >>> 0
-# -----------
+# 4/25 (1)の分割数を50にしました。
+probrem1 = trapezoidal_integral(f,0,pi/2,50)
+probrem2 = trapezoidal_integral(g,0,1,100)
+probrem3 = trapezoidal_integral(h,-100,100,1000)
+
+print((1),probrem1)
+print((2),probrem2)
+print((3),probrem3)
